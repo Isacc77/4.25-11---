@@ -1,0 +1,54 @@
+#include "stdio.h"
+
+  void insertionSort(int arr[], int len){
+    for(int i = 1; i < len ; i++){
+      int key = arr[i];
+      int j = i - 1;
+      while(j > -1 && arr[j] > key){
+        arr[j+1] = arr[j];
+        j--;
+      }
+      arr[j+1] = key;
+    }
+    
+  }
+
+
+  void printArray(int arr[], int len){
+    for(int i = 0; i < len ;i++){
+      printf("%d ", arr[i]);
+    }
+      printf("\n");
+  }
+
+int main(void) {
+
+  
+  int arr[] = {7,5,3,4,99,1};
+  // int len = sizeof(arr)/sizeof(arr[0]);
+  // printArray(arr,len);
+  // insertionSort(arr,len);
+  // printArray(arr,len);
+
+  printf("%p\n", arr);
+  printf("%p\n", arr+1);
+  printf("%p\n", arr+2);
+  
+  printf("%p\n", &arr[0]);
+  printf("%p\n", &arr[0]+1);
+  printf("%p\n", &arr[0]+2);  
+  
+  printf("%p\n", &arr);
+  printf("%p\n", &arr+1);
+  printf("%p\n", &arr+2);
+
+  int arr2[3][5];
+
+  printf("row: %d\n", sizeof(arr2)/sizeof(arr2[0]));
+  printf("each row has : %d  elements\n", sizeof(arr2[0])/sizeof(arr2[0][0]));
+
+
+  
+  return 0;
+  
+}
